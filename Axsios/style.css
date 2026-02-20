@@ -1,0 +1,34 @@
+img{
+    width: 50px;
+    border-radius: 50%;
+}
+
+th{
+    border-bottom: 2px solid rgb(155, 190, 201);
+    
+}
+
+td{
+    border-bottom: 2px solid rgb(155, 190, 201);
+width: 250px;
+text-align: center;
+}
+
+table{
+    margin-left: 300px;
+}
+.Add{
+    width: 80px;
+    margin-left: 43%;
+    background-color: blue;
+    color: white;
+}
+.Del{
+    background-color: white;
+    border: none;
+}
+
+.Edit{
+        background-color: white;
+    border: none;
+}
