@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/day2/style2.css" />
+  </head>
+  <body>
+
+    <button class="Add">Add</button>
+    
+    <select class="filterByStatus">
+      <option value="all">All</option>
+      <option value="Active">Active</option>
+      <option value="Inactive">Inactive</option>
+    </select>
+
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Avatar</th>
+          <th>Name</th>
+          <th>Date Created</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody class="box"></tbody>
+    </table>
+
+    <dialog class="AddModal">
+      <form class="AddForm">
+        <input name="avatar" type="text" placeholder="Avatar.." />
+        <input name="name" type="text" placeholder="Name..." />
+        <input name="date" type="text" placeholder="date..." />
+        <input name="role" type="text" placeholder="role..." />
+        <button type="submit">Submit</button>
+      </form>
+    </dialog>
+
+        <dialog class="EditModal">
+<form class="EditForm">
+  <input type="text" name="name" />
+  <input type="text" name="avatar" />
+  <input type="number" name="age" />
+  <button type="submit">Save</button>
+</form>
+    </dialog>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="/day2/app2.js"></script>
+  </body>
+</html>
