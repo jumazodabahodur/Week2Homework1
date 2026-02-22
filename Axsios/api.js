@@ -11,7 +11,7 @@ async function  GetUser() {
         
     }
 }
-
+GetUser()
 
 async function PostUser(user) {
     try {

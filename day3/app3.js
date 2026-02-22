@@ -1,4 +1,4 @@
-import { DeleteUser, PostUser, FilterByStatus,EditUserApi } from "./api2.js";
+import { DeleteUser, PostUser, FilterByStatus,EditUserApi } from "./api3.js";
 
 const box = document.querySelector(".box");
 const AddModal = document.querySelector(".AddModal");
