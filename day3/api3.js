@@ -1,4 +1,4 @@
-import { ShowUser } from "./app2.js";
+import { ShowUser } from "./app3.js";
 
 const API = "https://6966216af6de16bde44c5161.mockapi.io/users";
 
