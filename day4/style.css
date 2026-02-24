@@ -1,0 +1,30 @@
+img{
+    width: 40px;
+    border-radius: 50%;
+margin-left: 15px;
+     
+}
+
+table{
+    border:  1px solid rgb(141, 136, 136);
+    border-collapse: collapse;
+}
+th{
+    border-bottom: 1px solid rgb(162, 160, 160);
+    width: 200px;
+}
+td{
+    border-bottom: 1px solid rgb(191, 186, 186);
+    text-align: center;
+}
+
+.tdName{
+width: 350px;
+}
+
+.Add{
+    width: 80px;
+
+    background-color: blue;
+    color: white;
+}

@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "age": "24",
+      "avatar": "https://i.pravatar.cc/100?img=2",
+      "status": "false",
+      "category": "User"
+    },
+    {
+      "id": "3",
+      "name": "Jn Doe",
+      "age": "44",
+      "avatar": "https://i.pravatar.cc/100?img=4",
+      "status": "true",
+      "category": "Admin"
+    },
+    {
+      "id": "5e26",
+      "name": "dvf",
+      "age": "fvdf",
+      "avatar": "https://avatars.mds.yandex.net/i?id=3f594cccde2835df57f5aaf95c2677b7c1ac68e7-5141058-images-thumbs&n=13",
+      "status": "true",
+      "category": "Guest"
+    }
+  ]
+}
