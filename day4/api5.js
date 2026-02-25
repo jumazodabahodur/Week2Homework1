@@ -5,9 +5,9 @@ let limit = 10
 export async function GetUser(page = 1) {
     try {
         const response = await axios.get(`${API}?_page=${page}&_limit=${limit}`);
-      const total = response.headers["x-total-count"]; // total items
+      const total = response.headers["x-total-count"]; 
 
-        console.log("DATA:", response.data); // check here
+        console.log("DATA:", response.data); 
         console.log("TOTAL:", total);
 
         showPaginate(Math.ceil(total / limit));
