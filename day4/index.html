@@ -3,67 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Users</title>
-    <link rel="stylesheet" href="/day4/style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+<div style="display: flex;">
+    <input type="text" class="search" placeholder="Search...">
+        <select class="filterByStatus">
+        <option value="">All</option>
+        <option value="true">Oline🟢</option>
+        <option value="false">OffLine⛔</option>
+    </select>
 
-<button class="Add">Add+</button>
-<button class="DeleteSelected">Delete Selected</button>
-<input type="text" class="search" placeholder="Search by name">
+    <button class="Add">Add</button>
 
-<select class="filterByStatus">
-    <option value="">All Status</option>
-    <option value="true">Active</option>
-    <option value="false">Inactive</option>
-</select>
 
-<select class="filterByCategory">
-    <option value="">All Categories</option>
-    <option value="Admin">Admin</option>
-    <option value="User">User</option>
-    <option value="Guest">Guest</option>
-</select>
+    </div> <br>
 
+    <dialog class="AddModal">
+<form class="AddForm">
+    <input type="text" name="avatar" placeholder="Url Avatar..."> <br> <br>
+    <input type="text" name="name" placeholder="Name..."> <br> <br>
+    <input type="text" name="gmail" placeholder="Gamil..."> <br> <br>
+     <input type="text" name="function" placeholder="Category..."> <br>  <br>
+    <input type="text" name="employed" placeholder="Employed..."> <br> <br>
+  
+    <button class="submit" type="submit">Add</button>
+     <button class="close">Close</button>
+</form>
+    </dialog>
+
+        <dialog class="EditModal">
+<form class="EditForm">
+    <input type="text" name="avatar" placeholder=""> <br> <br>
+    <input type="text" name="name" placeholder=""> <br> <br>
+    <input type="text" name="gmail" placeholder=""> <br> <br>
+    <input type="text" name="function" placeholder=""> <br> <br>
+
+    <input type="text" name="employed" placeholder=""> <br> <br>
+
+    <button class="submit" type="submit">Edd</button>
+</form>
+<button class="closeEdit">Close</button>
+
+    </dialog>
+    
 <table>
     <thead>
         <tr>
-            <th><input type="checkbox" id="checkboxAll"></th>
-            <th>Avatar</th>
-            <th>Name</th>
-            <th>Age</th>
+            <th>Member</th>
+            <th>Function</th>
             <th>Status</th>
-            <th>Category</th>
+            <th>Employed</th>
             <th>Action</th>
         </tr>
     </thead>
+
     <tbody class="box"></tbody>
+    
+ 
 </table>
 
-
-
-<dialog class="AddModal">
-    <form class="AddForm">
-        <input type="text" name="avatar" placeholder="Avatar URL"> <br> <br>
-        <input type="text" name="name" placeholder="Name"> <br> <br>
-        <input type="text" name="age" placeholder="Age"> <br> <br>
-        <input type="text" name="category" placeholder="Category"> <br> <br>
-        <button type="submit">Add</button>
-    </form>
-</dialog>
-
-<dialog class="EditModal">
-    <form class="EditForm">
-        <input type="text" name="avatar" placeholder="Avatar URL">
-        <input type="text" name="name" placeholder="Name">
-        <input type="text" name="age" placeholder="Age">
-        <input type="text" name="category" placeholder="Category">
-        <button type="submit">Edit</button>
-    </form>
-</dialog>
-
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script type="module" src="/day4/api4.js"></script>
-
+    <script type="module" src="/api5.js"></script>
 </body>
 </html>

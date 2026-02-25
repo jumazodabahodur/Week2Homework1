@@ -39,13 +39,13 @@
       "avatar": "https://i.pravatar.cc/100?img=7",
       "status": "true",
       "category": "Admin"
-    },   {
-      "id": "10",
+    },
+    {
+      "avatar": "https://i.pravatar.cc/100?img=7",
       "name": "Sara Wilson",
       "age": "31",
-      "avatar": "https://i.pravatar.cc/100?img=7",
-      "status": "true",
-      "category": "Admin"
+      "category": "User",
+      "id": "10"
     }
   ]
 }
