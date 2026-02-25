@@ -1,0 +1,51 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "age": "24",
+      "avatar": "https://i.pravatar.cc/100?img=2",
+      "status": "false",
+      "category": "User"
+    },
+    {
+      "id": "2",
+      "name": "Jn Doe",
+      "age": "44",
+      "avatar": "https://i.pravatar.cc/100?img=4",
+      "status": "true",
+      "category": "Admin"
+    },
+    {
+      "id": "7",
+      "name": "Alice Smith",
+      "age": "29",
+      "avatar": "https://i.pravatar.cc/100?img=5",
+      "status": "true",
+      "category": "User"
+    },
+    {
+      "id": "8",
+      "name": "Michael Brown",
+      "age": "35",
+      "avatar": "https://i.pravatar.cc/100?img=6",
+      "status": "false",
+      "category": "Moderator"
+    },
+    {
+      "id": "9",
+      "name": "Sara Wilson",
+      "age": "31",
+      "avatar": "https://i.pravatar.cc/100?img=7",
+      "status": "true",
+      "category": "Admin"
+    },   {
+      "id": "10",
+      "name": "Sara Wilson",
+      "age": "31",
+      "avatar": "https://i.pravatar.cc/100?img=7",
+      "status": "true",
+      "category": "Admin"
+    }
+  ]
+}

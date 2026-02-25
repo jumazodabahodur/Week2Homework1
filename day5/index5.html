@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/day5/styel5.css">
+</head>
+<body>
+    <button class="Add">Add+</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Avatar</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Status</th>
+                <th>Category</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody class="box"></tbody>
+    </table>
+    
+
+<dialog class="AddModal">
+    <form class="AddForm">
+        <input type="text" name="avatar" placeholder="Avatar URL"> <br> <br>
+        <input type="text" name="name" placeholder="Name"> <br> <br>
+        <input type="text" name="age" placeholder="Age"> <br> <br>
+        <input type="text" name="category" placeholder="Category"> <br> <br>
+        <button type="submit">Add</button>
+    </form>
+</dialog>
+
+  <div style="margin-top: 50px; margin-left: 600px; margin-bottom: 50px; display: flex; gap: 10px;"
+                class="paginations"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="/day5/api5.js"></script>
+</body>
+</html>

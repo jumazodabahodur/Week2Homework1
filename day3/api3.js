@@ -39,7 +39,7 @@ function FilterByStatus(status) {
     return;
   }
 
-  const filtered = users.filter(u => u.status === status);
+  const filtered = users.filter(u => u.status.toString() === status);
   ShowUser(filtered);
 }
 async function EditUserApi (obj,id) {

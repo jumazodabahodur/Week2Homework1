@@ -45,10 +45,10 @@ search.oninput = async () => {
     const value = search.value.trim();
 
     try {
-        const response = await axios.get(API, value ? { params: { name_like: value } } : {});
-        ShowUser(response.data); 
+ const response = await axios.get(value?`${API}?name=${value}`:API);        ShowUser(response.data); 
     } catch (error) {
         console.error(error);
     }
 };
 GetUser()
+
