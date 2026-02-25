@@ -30,12 +30,12 @@ function ShowUser(data) {
     name.innerHTML = el.name;
 
     avatar.src = el.avatar;
-    avatar.width = 50;
+    
     avatarTd.append(avatar);
 
     date.innerHTML = el.date;
     role.innerHTML = el.role;
-status.innerHTML = el.status === "Active" ? "🟢 Active" : "🔴 Inactive";
+status.innerHTML = el.status ? "🟢 Active" : "🔴 Inactive";
     btnDel.innerHTML = "⛔";
     btnEdit.innerHTML = "✏️";
 
@@ -71,6 +71,8 @@ Add.onclick = () => AddModal.showModal();
 
 filterByStatus.onchange = () => {
   const value = filterByStatus.value;
+  console.log(value);
+  
   FilterByStatus(value);
 };
 
@@ -95,7 +97,7 @@ function EditUser(el){
     EditForm["name"].value = el.name
     EditForm["date"].value = el.date
     EditForm["role"].value = el.role
-    EditForm["EditStatus"].value = el.status ?"Active" :"Inactive"
+    EditForm["EditStatus"].value = el.status ?"true" :"false"
 
 }
 

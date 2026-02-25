@@ -1,124 +1,130 @@
-import { DeleteUser, PostUser, EditUserApi, FilterByStatus, FilterByCategory, GetUser } from "./api4.js";
+import { DeleteUser,PostUser,EditUserApi,FilterByStatus } from "./api5.js";
+const box = document.querySelector(".box")
 
-const AddModal = document.querySelector(".AddModal");
-const AddForm = document.querySelector(".AddForm");
-const EditModal = document.querySelector(".EditModal");
-const EditForm = document.querySelector(".EditForm");
-const filterByStatus = document.querySelector(".filterByStatus");
-const filterByCategory = document.querySelector(".filterByCategory"); // новый select
-const Add = document.querySelector(".Add");
-const box = document.querySelector(".box");
-const checkboxAll = document.getElementById("checkboxAll");
-const deleteSelectedBtn = document.querySelector(".DeleteSelected");
+const AddForm = document.querySelector(".AddForm")
+const AddModal = document.querySelector(".AddModal")
 
-let idx = null;
+const EditForm = document.querySelector(".EditForm")
+const EditModal = document.querySelector(".EditModal")
 
+const filterByStatus = document.querySelector(".filterByStatus")
 
-function ShowUser(data) {
+const closeBtn = document.querySelector(".close")
+const closeEditBtn = document.querySelector(".closeEdit")
+
+const submit = document.querySelector(".submit")
+const Add = document.querySelector(".Add")
+let idx = null
+
+function ShowUser(data){
     box.innerHTML = "";
 
-    if (data.length === 0) {
-        const tr = document.createElement("tr");
-        tr.innerHTML = "<td colspan='6'>No users found</td>";
-        box.append(tr);
-        return;
-    }
+    data.forEach((el)=>{
+        const tr = document.createElement("tr")
+        const tdMember = document.createElement("td")
+        const tdFunction = document.createElement("td")
+        const tdStatus = document.createElement("td")
+        const tdEmployed = document.createElement("td")
+        const Action = document.createElement("td")
+        const btnDel = document.createElement("button")
+        const btnEdit = document.createElement("button")
 
-    data.forEach(el => {
-        const tr = document.createElement("tr");
 
-        const select = document.createElement("td");
-        const checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.classList.add("rowCheckbox");
-        checkbox.dataset.id = el.id;
-        select.append(checkbox);
+        tdMember.classList.add("tdMember")
 
-        const avatar = document.createElement("img");
-        avatar.src = el.avatar;
-        const name = document.createElement("td");
-        name.innerText = el.name;
-        const age = document.createElement("td");
-        age.innerText = el.age;
-        const status = document.createElement("td");
-        status.innerText = el.status === "true" ? "🟢 Active" : "🔴 Inactive";
-        const category = document.createElement("td");
-        category.innerText = el.category || "-"; 
+        tdMember.innerHTML = `   <td >
+        <img src="${el.avatar}" alt="">
+        <div>
+            ${el.name} <br>
+            ${el.gmail}
+        </div>
+    </td>`
+tdFunction.innerText =el.category
+tdStatus.innerHTML = el.status =="true" ? "Online🟢":"Offline⛔"
+tdEmployed.innerHTML = el.employed
+btnDel.innerHTML = "🗑️"
+btnEdit.innerHTML = "✏️"
 
-        const action = document.createElement("td");
-        const btnDel = document.createElement("button");
-        const btnEdit = document.createElement("button");
-        btnDel.innerText = "🗑️";
-        btnEdit.innerText = "✏️";
+btnDel.classList.add("btnDel")
+btnEdit.classList.add("btnEdit")
 
-        btnDel.onclick = () => { DeleteUser(el.id); GetUser(); };
-        btnEdit.onclick = () => { 
-            idx = el.id;
-            EditForm["avatar"].value = el.avatar;
-            EditForm["name"].value = el.name;
-            EditForm["age"].value = el.age;
-            EditModal.show();
-        };
+btnDel.onclick = () =>{
+    DeleteUser(el.id)
+}
 
-        action.append(btnDel, btnEdit);
-        tr.append(select, avatar, name, age, status, category, action);
-        box.append(tr);
-    });
-
-    initRowCheckboxes();
+btnEdit.onclick = () =>{
+EditUser(el)
 }
 
 
-function initRowCheckboxes() {
-    box.addEventListener("change", e => {
-        if (e.target.dataset && e.target.dataset.id) {
-            const all = document.querySelectorAll(".rowCheckbox");
-            checkboxAll.checked = Array.from(all).every(cb => cb.checked);
-        }
-    });
 
-    checkboxAll.addEventListener("change", () => {
-        document.querySelectorAll(".rowCheckbox").forEach(cb => cb.checked = checkboxAll.checked);
-    });
+filterByStatus?.addEventListener("change", ()=>FilterByStatus(filterByStatus.value))
 
-    deleteSelectedBtn.onclick = () => {
-        const selected = document.querySelectorAll(".rowCheckbox:checked");
-        selected.forEach(cb => DeleteUser(cb.dataset.id));
-        checkboxAll.checked = false;
-        GetUser();
-    };
+
+tr.append(tdMember,tdFunction,tdStatus,tdEmployed,Action)
+Action.append(btnDel,btnEdit)
+box.append(tr)
+
+
+    })
+}
+
+Add.onclick = () =>{
+    AddModal.show()
+}
+
+AddForm.onsubmit = (event) =>{
+   
+event.preventDefault()
+
+const obj = {
+    avatar:AddForm["avatar"].value,
+    name:AddForm["name"].value,
+    gmail:AddForm["gmail"].value,
+     category:AddForm["functio "].value,
+    employed:AddForm["employed"].value
+
+}
+PostUser(obj)
+AddModal.close()
+}
+
+function EditUser(el){
+    EditModal.show()
+    idx = el.id
+EditForm["avatar"].value = el.avatar,
+EditForm["name"].value = el.name,
+EditForm["gmail"].value = el.gmail,
+EditForm["function"].value = el.function,
+EditForm["employed"].value = el.employed
 }
 
 
-Add.onclick = () => AddModal.show();
-AddForm.onsubmit = (e) => {
-    e.preventDefault();
-    const obj = {
-        avatar: AddForm["avatar"].value,
-        name: AddForm["name"].value,
-        age: AddForm["age"].value
-    };
-    PostUser(obj);
-    AddModal.close();
-    AddForm.reset();
-    GetUser();
-};
+EditForm.onsubmit = (event) =>{
+event.preventDefault()
+
+const obj ={
+    avatar:EditForm["avatar"].value,
+    name:EditForm["name"].value,
+    gmail:EditForm["gmail"].value,
+       category:EditForm["function"].value,
+    employed:EditForm["employed"].value
+
+}
+EditUserApi(obj,idx)
+EditModal.close()
+
+}
+
+closeBtn.onclick = () =>{
+    AddModal.close()
+}
+closeEditBtn.onclick = () =>{
+    EditModal.close()
+}
 
 
-EditForm.onsubmit = (e) => {
-    e.preventDefault();
-    const obj = {
-        avatar: EditForm["avatar"].value,
-        name: EditForm["name"].value,
-        age: EditForm["age"].value
-    };
-    EditUserApi(obj, idx);
-    EditModal.close();
-    GetUser();
-};
 
 
-filterByStatus?.addEventListener("change", () => FilterByStatus(filterByStatus.value));
-filterByCategory?.addEventListener("change", () => FilterByCategory(filterByCategory.value));
 
-export { ShowUser, initRowCheckboxes };
+export{ShowUser}
