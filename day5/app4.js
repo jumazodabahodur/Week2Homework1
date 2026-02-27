@@ -1,4 +1,4 @@
-import { DeleteUser,PostUser,EditUserApi,FilterByStatus } from "./api5.js";
+import { DeleteUser,PostUser,EditUserApi,FilterByStatus } from "./api4.js";
 const box = document.querySelector(".box")
 
 const AddForm = document.querySelector(".AddForm")
@@ -40,7 +40,7 @@ function ShowUser(data){
         </div>
     </td>`
 tdFunction.innerText =el.category
-tdStatus.innerHTML = el.status =="true" ? "Online🟢":"Offline⛔"
+tdStatus.innerHTML = el.status =="true" ? "Onlinee🟢":"Offline⛔"
 tdEmployed.innerHTML = el.employed
 btnDel.innerHTML = "🗑️"
 btnEdit.innerHTML = "✏️"
