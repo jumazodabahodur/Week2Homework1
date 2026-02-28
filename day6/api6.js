@@ -1,6 +1,6 @@
 import { ShowData } from "./dom6.js";
 
-const api = "http://localhost:3001/data"
+const api = "http://localhost:3000/data"
 
 export async function GetData() {
     try {
@@ -33,3 +33,12 @@ try {
 }
 }
 
+export async function saveImg(image) {
+    try {
+        const response = await axios.post(api, { avatar: image })
+        ShowData(response.data)
+        return response.data
+    } catch (error) {
+        console.error(error)
+    }
+}
