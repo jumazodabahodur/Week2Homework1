@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Baakhodur",
+      "email": "baakhodur@example.com",
+      "status": true,
+      "avatar": ""
+    },
+    {
+      "id": "2",
+      "name": "Ali",
+      "email": "ali@example.com",
+      "status": false,
+      "avatar": ""
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OOP JSON Server Example</title>
+</head>
+<body>
+<h1>Users</h1>
+
+<select class="statusFilter">
+  <option value="">All</option>
+  <option value="true">Online</option>
+  <option value="false">Offline</option>
+</select>
+
+<input type="text" class="search" placeholder="Search by name">
+
+<input type="file" class="FileImage">
+<img class="Avatar" width="100">
+
+<table >
+  <thead>
+    <tr>
+      <th>ID</th><th>Name</th><th>Email</th><th>Status</th><th>Actions</th>
+    </tr>
+  </thead>
+  <tbody class="box"></tbody>
+</table>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
